@@ -1,4 +1,4 @@
-from flask import render_template, json
+from flask import render_template, json, send_from_directory
 import os
 from app import app
 
@@ -10,13 +10,13 @@ def index():
     filename = os.path.join(app.static_folder, 'json/workexperience.json')
     with open(filename) as f:
         workexperience = json.load(f)
-    
+
     # Skills
     filename = os.path.join(app.static_folder, 'json/skills.json')
     with open(filename) as f:
         skills = json.load(f)
         skills = {k: v for k, v in sorted(skills.items(), key=lambda item: item[1], reverse=True)}
-
+    
     # Degrees
     filename = os.path.join(app.static_folder, 'json/degrees.json')
     with open(filename) as f:
@@ -27,4 +27,7 @@ def index():
                             skills=skills,
                             degrees=degrees)   
 
-  
+@app.route("/download/<path:filename>")
+def download(filename):
+    filepath = os.path.join(app.static_folder, 'download/')
+    return send_from_directory(filepath, filename, as_attachment=True)  

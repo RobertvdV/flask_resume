@@ -17,8 +17,14 @@ def index():
         skills = json.load(f)
         skills = {k: v for k, v in sorted(skills.items(), key=lambda item: item[1], reverse=True)}
 
+    # Degrees
+    filename = os.path.join(app.static_folder, 'json/degrees.json')
+    with open(filename) as f:
+        degrees = json.load(f)
+
     return render_template('index.html',
                             workexperience=workexperience,
-                            skills=skills)   
+                            skills=skills,
+                            degrees=degrees)   
 
   

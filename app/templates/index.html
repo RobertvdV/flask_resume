@@ -87,35 +87,29 @@
                 <li>alice.barkley@example.com</li>
               </ul>
             </div>
-
+            {# Degrees #}
             <h3 class="resume-title">Education</h3>
+            {% for event in degrees %}
             <div class="resume-item">
-              <h4>Master of Fine Arts &amp; Graphic Design</h4>
-              <h5>2015 - 2016</h5>
-              <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-              <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
+              <h4>{{ event.type }} - {{ event.name }}</h4>
+              <h5>{{ event.start_date }} - {{ event.end_date }}</h5>
+              <p><em>{{ event.organisation }}, {{ event.location }} {{ event.country }}</em></p>
+              <p>{{ event.description }}</p>
             </div>
-            <div class="resume-item">
-              <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
-              <h5>2010 - 2014</h5>
-              <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-              <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
-            </div>
+            {% endfor %} 
           </div>
+          {# Working Experience #}
           <div class="col-lg-6">
             <h3 class="resume-title">Professional Experience</h3>
-            
             {% for event in workexperience %}
             <div class="resume-item">
               <h4>{{ event.position }}</h4>
               <h5>{{ event.start_date }} - {{ event.end_date }}</h5>
               <p><em>{{ event.organisation }}, {{ event.location }} {{ event.country }}</em></p>
-              <ul>
-                <li>{{ event.description }}</li>
+              <p>{{ event.description }}</p>
               </ul>
             </div>
             {% endfor %} 
-
           </div>
         </div>
 

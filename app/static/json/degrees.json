@@ -1,7 +1,7 @@
 [
     {
         "name": "Geo-Information Science",
-        "start_date": "01 September 2019",
+        "start_date": "2019",
         "end_date": "Ongoing",
         "organisation": "Wageningen University & Research",
         "location": "Wageningen",
@@ -11,8 +11,8 @@
     },
     {
         "name": "Forest & Nature Conservation",
-        "start_date": "01 September 2014",
-        "end_date": "01 November 2018",
+        "start_date": "2014",
+        "end_date": "2017",
         "organisation": "Wageningen University & Research",
         "location": "Wageningen",
         "country": "Netherlands",
@@ -21,8 +21,8 @@
     },
     {
         "name": "Finance, Tax and Advice",
-        "start_date": "01 September 2010",
-        "end_date": "01 September 2015",
+        "start_date": "2010",
+        "end_date": "2015",
         "organisation": "Hogeschool van Arnhem Nijmegen",
         "location": "Arnhem",
         "country": "Netherlands",

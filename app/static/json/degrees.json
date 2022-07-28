@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Geo-Information Science",
+        "start_date": "01 September 2019",
+        "end_date": "Ongoing",
+        "organisation": "Wageningen University & Research",
+        "location": "Wageningen",
+        "country": "Netherlands",
+        "description": "Solving multidisciplinary and complex issues by using geo-information systems, geo-informatics, remote sensing and data science.",
+        "type": "Master of Science"
+    },
+    {
+        "name": "Forest & Nature Conservation",
+        "start_date": "01 September 2014",
+        "end_date": "01 November 2018",
+        "organisation": "Wageningen University & Research",
+        "location": "Wageningen",
+        "country": "Netherlands",
+        "description": "Forest and Nature Conservation aims at understanding the ecological and socio-economic aspects of forests and natural areas and their management.",
+        "type": "Bachelor of Science"
+    },
+    {
+        "name": "Finance, Tax and Advice",
+        "start_date": "01 September 2010",
+        "end_date": "01 September 2015",
+        "organisation": "Hogeschool van Arnhem Nijmegen",
+        "location": "Arnhem",
+        "country": "Netherlands",
+        "description": "Financial planning. Mortgage advice and making a financing recommendations for a businesses. Figuring out tax benefits for both businesses and individuals. ",
+        "type": "Bachelor of Economics"
+    }
+]

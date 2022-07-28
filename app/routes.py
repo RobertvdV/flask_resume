@@ -1,15 +1,24 @@
-from flask import render_template
+from flask import render_template, json
+import os
 from app import app
 
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html')
 
-@app.route('/projects')
-def projects():
-    return render_template('projects.html')
+    # Working Experience
+    filename = os.path.join(app.static_folder, 'json/workexperience.json')
+    with open(filename) as f:
+        workexperience = json.load(f)
+    
+    # Skills
+    filename = os.path.join(app.static_folder, 'json/skills.json')
+    with open(filename) as f:
+        skills = json.load(f)
+        skills = {k: v for k, v in sorted(skills.items(), key=lambda item: item[1], reverse=True)}
 
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')    
+    return render_template('index.html',
+                            workexperience=workexperience,
+                            skills=skills)   
+
+  

@@ -1,0 +1,52 @@
+[
+    {
+        "position": "Research Assistant Deep Learning",
+        "start_date": "01 April 2022",
+        "end_date": "01 Oktober 2022",
+        "organisation": "Wageningen University & Research",
+        "location": "Wageningen",
+        "country": "Netherlands",
+        "description": "Research assistant as extension of my thesis project: A Step Towards Robust Species Recognition: Learning AI to Reason Like a skilled Taxonomist. The goal was to create a dataset containing species descriptions to use for few-shot and zero-shot learning.",
+        "link": "https://www.wur.nl/"
+    },
+    {
+        "position": "Owner & Founder",
+        "start_date": "01 September 2018",
+        "end_date": "Ongoing",
+        "organisation": "FlaxWay",
+        "location": "Hummelo",
+        "country": "Netherlands",
+        "description": "An Aerial based company, with focus on specialised aerial services, like 3D mapping, accurate volume estimates, DEM creation, orthophoto creation etc. Also provides several AI-based services.",
+        "link": "https://flaxway.nl/"
+    },
+    {
+        "position": "Teaching Assistant Deep Learning",
+        "start_date": "01 January 2022",
+        "end_date": "01 April 2022",
+        "organisation": "Wageningen University & Research",
+        "location": "Wageningen",
+        "country": "Netherlands",
+        "description": "Teaching assistant during the Machine Learning course. Machine Learning deals with algorithms that predict certain outputs given previously unseen input data from cameras, other sensors, maps, molecular measurements etc. These algorithms learn how to do so using training data.",
+        "link": "https://ssc.wur.nl/Rooster/Vak/FTE-35306"
+    },
+    {
+        "position": "Teaching Assistant GeoTools",
+        "start_date": "01 October 2021",
+        "end_date": "01 January 2022",
+        "organisation": "Wageningen University & Research",
+        "location": "Wageningen",
+        "country": "Netherlands",
+        "description": "Teaching assistant during the Geo-Information Tools course. This course is aimed at giving students knowledge and skills to implement GIS concepts within projects where geo-information plays an important role. The course content has a double-objective of providing students with the theoretical basis to run GIS-based projects (i), as well as the practical hands-in knowledge to implement a solution in a standard desktop GIS environment (ii). ",
+        "link": "https://ssc.wur.nl/Rooster/Vak/GRS-20806"
+    },
+    {
+        "position": "Soil & Aerial Engineer",
+        "start_date": "01 April 2018",
+        "end_date": "01 July 2019",
+        "organisation": "Antea Group",
+        "location": "Deventer",
+        "country": "Netherlands",
+        "description": "Soil and Aerial engineer (UAV-based data specialist). Set up automatic report system and invoice system with Excel VBA. Stopped to pursue an MSc. degree.",
+        "link": "https://anteagroup.nl/"
+    }
+]

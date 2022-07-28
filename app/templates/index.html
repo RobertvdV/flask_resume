@@ -7,7 +7,7 @@
         style="background: url({{ url_for('static', filename='images/images/hero_bg.jpeg') }});">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
         <h1>Robert van de Vlasakker</h1>
-        <p>I'm <span class="typed" data-typed-items="Data Scientist, Geo-Information Specialist, Freelancer, Ecologist"></span></p>
+        <p>I'm <span class="typed" data-typed-items="a Data Scientist, a Geo-Information Specialist, a Freelancer, an Ecologist"></span></p>
         <div class="social-links">
             <a href="https://github.com/RobertvdV" class="github"><i class="bx bxl-github"></i></a>
             <a href="https://www.linkedin.com/in/robertvandevlasakker/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
@@ -66,54 +66,61 @@
     </section>
     <!-- End About Section -->
 
-      <!-- ======= Facts Section ======= -->
-    <section id="facts" class="facts">
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Facts</h2>
+          <h2>Resume</h2>
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
         <div class="row">
+          <div class="col-lg-6">
+            <h3 class="resume-title">Sumary</h3>
+            <div class="resume-item pb-0">
+              <h4>Brandon Johnson</h4>
+              <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
+              <ul>
+                <li>Portland par 127,Orlando, FL</li>
+                <li>(123) 456-7891</li>
+                <li>alice.barkley@example.com</li>
+              </ul>
+            </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Happy Clients</p>
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Master of Fine Arts &amp; Graphic Design</h4>
+              <h5>2015 - 2016</h5>
+              <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
+              <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
+            </div>
+            <div class="resume-item">
+              <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
+              <h5>2010 - 2014</h5>
+              <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
+              <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Projects</p>
+          <div class="col-lg-6">
+            <h3 class="resume-title">Professional Experience</h3>
+            
+            {% for event in workexperience %}
+            <div class="resume-item">
+              <h4>{{ event.position }}</h4>
+              <h5>{{ event.start_date }} - {{ event.end_date }}</h5>
+              <p><em>{{ event.organisation }}, {{ event.location }} {{ event.country }}</em></p>
+              <ul>
+                <li>{{ event.description }}</li>
+              </ul>
             </div>
-          </div>
+            {% endfor %} 
 
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hours Of Support</p>
-            </div>
           </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Awards</p>
-            </div>
-          </div>
-
         </div>
 
       </div>
-    </section>
-    <!-- End Facts Section -->
+    </section><!-- End Resume Section -->
 
 {% endblock %}
 

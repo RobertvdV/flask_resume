@@ -131,3 +131,7 @@ dmypy.json
 # Model params
 .saved_weights
 saved_weights/
+
+# DS store
+.DS_Store
+DS_Store/

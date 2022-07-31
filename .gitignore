@@ -133,5 +133,12 @@ dmypy.json
 saved_weights/
 
 # DS store
-.DS_Store
+*.DS_Store
 DS_Store/
+
+# Jupyter
+jupyter/
+.jupyter
+
+# Logs
+logs/

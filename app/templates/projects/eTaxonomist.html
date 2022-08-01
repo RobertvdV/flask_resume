@@ -1,28 +1,52 @@
 <h3 class="portfolio-title">eTaxonomist</h3>
+<span>
+    eTaxonomist is a project to gather as much textual species descriptions as possible.
+    These descriptions are used to improve convolution neural networks and can be used for fewshot or zeroshot learning.
+</span>
+<div class="content">
+    <h3>Step I</h3>
+</div>
+<!-- Step 1 -->
 <div class="row">
-    <!-- <div class="col-2"></div> -->
-    <div class="col-xxl">
-        <iframe id="nxgraph_desktop" style="height: 450px; width:650px; text-align: center;" 
-                src="{{ url_for('static', filename='images/figures/nxgraph.html') }}" title="description">
-        </iframe>
-    </div>
     <div class="col-xxl d-flex flex-column justify-content-center">
-        <!-- <div class="portfolio-item"> -->
-        <p>Magnam dolores commodi suscipit. 
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem. 
-            Sit sint consectetur velit. Quisquam quos quisquam cupiditate. 
-            Et nemo qui impedit suscipit alias ea. 
-            Quia fugiat sit in iste officiis commodi quidem hic quas. 
+        <p> The first step is using a natural language processing model that can regonise species descriptions from text. 
+            This NLP classifier is trained on a large corpus of text.
+            Websites are automatically queried, scaped and the text is retrieved and classified into descriptive and non-descriptive text.  
         </p>
     </div>
-    <!-- <div class="col-2"></div> -->
+    <div class="col-xxl mt-3">
+        <p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">
+            <mark style="background-color: rgba(255, 0, 0, 0.350); margin: 0; padding: 0;";>Brown bears are thought to have evolved from Ursus etruscus in Asia.</mark>
+            <mark style="background-color: rgba(255, 0, 0, 0.350); margin: 0; padding: 0;";>The brown bear, per Kurten (1976), has been stated as "clearly derived from the Asian population of Ursus savini about 800,000 years ago; spread into Europe, to the New World.</mark>
+            <mark style="background-color: rgba(0, 128, 0, 0.350); margin: 0; padding: 0;";>Brown bears often have a thick brown fur and a large nose which help them find food.</mark>
+            <mark style="background-color: rgba(255, 0, 0, 0.350); margin: 0; padding: 0;";>They have large claws. each of the claws has five sharp nails.</mark>
+            <mark style="background-color: rgba(255, 0, 0, 0.350); margin: 0; padding: 0;";>Brown bears were once native to Europe, much of Asia, the Atlas Mountains of Africa, and North America, but are now extirpated in some areas, and their populations have greatly decreased in other areas.</mark>
+            <mark style="background-color: rgba(255, 0, 0, 0.350); margin: 0; padding: 0;";>There are approximately 200,000 brown bears left in the world.</mark>
+        </p>
+    </div>
 </div>
 
-<p>Magnam dolores commodi suscipit. 
-    Necessitatibus eius consequatur ex aliquid fuga eum quidem. 
-    Sit sint consectetur velit. Quisquam quos quisquam cupiditate. 
-    Et nemo qui impedit suscipit alias ea. 
-    Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+<div class="content">
+    <h3>Step II</h3>
+</div>
+<!-- Step 2 -->
+<div class="row">
+    <div class="col-xxl">
+        <!-- DESKTOP -->
+        <div class="d-none d-md-block" style="text-align:center">
+            <iframe id="nxgraph_desktop" style="height: 450px; width:650px;" 
+                    src="{{ url_for('static', filename='images/figures/nxgraph.html') }}" title="nxgraph">
+            </iframe>
+        </div>
+        <!-- MOBILE -->
+        <img class="d-md-none img-fluid w-100" alt="mobile alt text" src="{{ url_for('static', filename='images/figures/nxgraph.svg') }}">
+    </div>
+    <div class="col-xxl d-flex flex-column justify-content-center">
+        <p>The second step is to extract the most important information from the candidate sentences.
+            By constructing an knowledge graph from the information, the graphs can be linked between species and allows for easy trait sharing across species.
+        </p>
+    </div>
+</div>
 
 
 

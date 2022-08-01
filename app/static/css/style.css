@@ -117,11 +117,11 @@ h6 {
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
-}
+} */
 
 /*--------------------------------------------------------------
 # Header
@@ -594,6 +594,13 @@ section {
   color: #45505b;
 }
 
+.portfolio .content h3 {
+  font-weight: 700;
+  font-size: 26px;
+  color: #728394;
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
 
 
 /*--------------------------------------------------------------

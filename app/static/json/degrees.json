@@ -28,5 +28,15 @@
         "country": "Netherlands",
         "description": "Financial planning. Mortgage advice and making a financing recommendations for a businesses. Figuring out tax benefits for both businesses and individuals. ",
         "type": "Bachelor of Economics"
+    },
+    {
+        "name": "VWO (Pre-University Eduction)",
+        "start_date": "2004",
+        "end_date": "2010",
+        "organisation": "Ludger College",
+        "location": "Doetinchem",
+        "country": "Netherlands",
+        "description": "Economics & Management Profile with Biology and Greek.",
+        "type": "Pre-University Eductions"
     }
 ]

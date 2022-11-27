@@ -1,15 +1,22 @@
+import logging
+import os
+
+from logging.handlers import SMTPHandler, RotatingFileHandler
 from flask import Flask
 from flask_bootstrap import Bootstrap5
 from config import Config
-import logging
-from logging.handlers import SMTPHandler, RotatingFileHandler
-import os
 
 app = Flask(__name__)
 app.config.from_object(Config)
 bootstrap = Bootstrap5(app)
 
-from app import routes
+# Blueprint Registration
+from app.main import bp as main_bp
+from app.errors import bp as errors_bp
+
+app.register_blueprint(main_bp)
+app.register_blueprint(errors_bp)
+
 
 if not app.debug:
     if not os.path.exists('logs'):

@@ -1,0 +1,44 @@
+    <section id="resume" class="resume">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2>Resume</h2>
+            <p> When I am not busy with Datascience or GIS, 
+                I'd love to go hiking, inline skating or mountainbiking. 
+                I play the piano and love to read in my free time.
+                If you want to get in touch, you can approach me via LinkedIn 
+                or download my resume, which contains all my essential contact information.</p>
+            <a href="{{ url_for('main.download', filename="resume_RvdV.pdf") }}" class="btn btn-secondary m-5 p-3" style="background: #000000;;" tabindex="-1" role="button" aria-disabled="true">Download my Resume</a>
+          </div>
+  
+          <div class="row">
+            <div class="col-lg-6">
+              {# Degrees #}
+              <h3 class="resume-title">Education</h3>
+              {% for event in degrees %}
+              <div class="resume-item">
+                <h4>{{ event.type }} - {{ event.name }}</h4>
+                <h5>{{ event.start_date }} - {{ event.end_date }}</h5>
+                <p><em>{{ event.organisation }}, {{ event.location }} {{ event.country }}</em></p>
+                <p>{{ event.description }}</p>
+              </div>
+              {% endfor %} 
+            </div>
+            {# Working Experience #}
+            <div class="col-lg-6">
+              <h3 class="resume-title">Professional Experience</h3>
+              {% for event in workexperience %}
+              <div class="resume-item">
+                <h4>{{ event.position }}</h4>
+                <h5>{{ event.start_date }} - {{ event.end_date }}</h5>
+                <p><em>{{ event.organisation }}, {{ event.location }} {{ event.country }}</em></p>
+                <p>{{ event.description }}</p>
+                <a href="{{ event.link }}">{{ event.link }}</a> 
+                </ul>
+              </div>
+              {% endfor %} 
+            </div>
+          </div>
+  
+        </div>
+    </section>

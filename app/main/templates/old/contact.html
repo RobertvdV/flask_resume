@@ -1,0 +1,20 @@
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Contact</h2>
+            <p>
+                If you want to get in touch, you can approach me via LinkedIn or download my resume, which contains all my essential contact information.
+            </p>
+            <a href="{{ url_for('main.download', filename="resume_RvdV.pdf") }}" class="btn btn-secondary m-5 p-3" style="background: #000000;;" tabindex="-1" role="button" aria-disabled="true">Download my Resume</a>
+
+            <div class="mx-auto mb-3 w-50">            
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input class="form-control" type="text" placeholder="Disabled input" aria-label="Disabled input example" disabled>
+                <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                <input class="form-control" rows="3" type="text" placeholder="This contact form is disabled; download my resume if you want to contact me." aria-label="Disabled input example" disabled>    
+            </div>
+        </div>
+    </div>
+</section>
+

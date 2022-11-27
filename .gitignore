@@ -142,3 +142,6 @@ jupyter/
 
 # Logs
 logs/
+
+# Model for now
+./models/

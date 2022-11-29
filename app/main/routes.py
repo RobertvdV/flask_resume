@@ -7,6 +7,15 @@ from app.main import bp
 @bp.route('/')
 @bp.route('/index')
 def index():
+    return render_template('index.html')   
+
+@bp.route("/download/<path:filename>")
+def download(filename):
+    filepath = os.path.join(app.static_folder, 'download/')
+    return send_from_directory(filepath, filename, as_attachment=True)  
+
+@bp.route('/resume')
+def resume():
 
     # Working Experience
     filename = os.path.join(app.static_folder, 'json/workexperience.json')
@@ -24,15 +33,10 @@ def index():
     with open(filename) as f:
         degrees = json.load(f)
 
-    return render_template('index.html',
+    return render_template('resume.html',
                             workexperience=workexperience,
                             skills=skills,
                             degrees=degrees)   
-
-@bp.route("/download/<path:filename>")
-def download(filename):
-    filepath = os.path.join(app.static_folder, 'download/')
-    return send_from_directory(filepath, filename, as_attachment=True)  
 
 @bp.route('/portfolio')
 def portfolio():

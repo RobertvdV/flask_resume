@@ -1,5 +1,26 @@
 {% extends "base.html" %}
 
   {% block content %}
-    asdas
+  <!-- Page content-->
+  <div class="container py-5 mt-4 mt-lg-5 mb-lg-4 my-xl-5">
+    <div class="row pt-sm-2 pt-lg-0">
+
+    <!-- Breadcrumb-->
+    <nav aria-label="breadcrumb">
+      <ol class="pt-lg-3 pb-lg-4 pb-2 breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
+      </ol>
+    </nav>
+
+    <!-- Page content-->
+    <div class="container d-flex flex-column justify-content-center min-vh-100 py-5">
+      <div class="text-center pt-4 mt-lg-2">
+        <h1 class="display-5">Under Construction</h1>
+        <p class="fs-lg pb-2 pb-md-0 mb-4 mb-md-5">I am still working on this page. Please come back later.</p><a class="btn btn-lg btn-primary" href="{{ url_for('main.index') }}">Go to homepage</a>
+      </div>
+    </div>
+
+  </div>
+</div>
 {% endblock %}

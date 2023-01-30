@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
-  {% block content %}
+{% block content %}
 
-  <!-- Page content-->
-  <div class="container py-5 mt-4 mt-lg-5 mb-lg-4 my-xl-5">
-    <div class="row pt-sm-2 pt-lg-0">
+<!-- Page content-->
+<div class="container py-5 mt-4 mt-lg-5 mb-lg-4 my-xl-5">
+  <div class="row pt-sm-2 pt-lg-0">
 
     <!-- Breadcrumb-->
     <nav aria-label="breadcrumb">
@@ -16,70 +16,70 @@
 
     <!-- Sidebar (offcanvas on sreens < 992px)-->
     <aside class="col-lg-3 pe-lg-4 pe-xl-5 mt-n3">
-        <div class="position-lg-sticky top-0">
-          <div class="d-none d-lg-block" style="padding-top: 105px;"></div>
-          <div class="offcanvas-lg offcanvas-start" id="sidebarAccount">
-          <button class="btn-close position-absolute top-0 end-0 mt-3 me-3 d-lg-none" type="button" data-bs-dismiss="offcanvas" data-bs-target="#sidebarAccount"></button>
+      <div class="position-lg-sticky top-0">
+        <div class="d-none d-lg-block" style="padding-top: 105px;"></div>
+        <div class="offcanvas-lg offcanvas-start" id="sidebarAccount">
+          <button class="btn-close position-absolute top-0 end-0 mt-3 me-3 d-lg-none" type="button"
+            data-bs-dismiss="offcanvas" data-bs-target="#sidebarAccount"></button>
           <div class="offcanvas-body">
 
-              <div class="pb-2 pb-lg-0 mb-4 mb-lg-5"><img class="d-block rounded-circle mb-2" src="{{ url_for('static', filename='img/base/profile_img.jpeg') }}" width="120" alt="Robert van de Vlasakker">
+            <div class="pb-2 pb-lg-0 mb-4 mb-lg-5"><img class="d-block rounded-circle mb-2"
+                src="{{ url_for('static', filename='img/base/profile_img.jpeg') }}" width="120"
+                alt="Robert van de Vlasakker">
               <h3 class="h5 mb-1">
                 Robert van de Vlasakker
               </h3>
               <p class="fs-sm text-muted mb-0">
-                RobertvandeVlasakker @ iCloud 
+                RobertvandeVlasakker @ iCloud
               </p>
-              </div>
+            </div>
 
-              {# Dark Mode #}
-              <!-- <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
+            {# Dark Mode #}
+            <!-- <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
                 <input class="form-check-input" type="checkbox" id="theme-mode">
                 <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
                 <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
               </div> -->
 
-              <nav class="nav flex-column pb-2 pb-lg-4 mb-3 mt-5">
+            <nav class="nav flex-column pb-2 pb-lg-4 mb-3 mt-5">
               <h4 class="fs-xs fw-medium text-muted text-uppercase pb-1 mb-2">
                 Overview
               </h4>
-                <a class="nav-link fw-semibold py-2 px-0" href="{{ url_for('main.resume', _anchor='basic_info') }}">
-                  <i class="ai-user fs-5 opacity-60 me-2">
-                  </i>
-                    Basic Info
-                </a>
-                <a class="nav-link fw-semibold py-2 px-0" href="{{ url_for('main.resume', _anchor='skills') }}">
-                  <i class="ai-horizontal-align-left fs-5 opacity-60 me-2">
-                  </i>
-                    Skills
-                </a>
-                <a class="nav-link fw-semibold py-2 px-0" href="{{ url_for('main.resume', _anchor='work_experience') }}">
-                  <i class="ai-briefcase fs-5 opacity-60 me-2">
-                  </i>
-                    Work Experience
-                </a>
-                <a class="nav-link fw-semibold py-2 px-0" href="{{ url_for('main.resume', _anchor='degrees') }}">
-                  <i class="ai-award fs-5 opacity-60 me-2">
-                  </i>
-                    Degrees
-                </a>
-              </nav>
-            </div>
+              <a class="nav-link fw-semibold py-2 px-0" href="{{ url_for('main.resume', _anchor='basic_info') }}">
+                <i class="ai-user fs-5 opacity-60 me-2">
+                </i>
+                Basic Info
+              </a>
+              <a class="nav-link fw-semibold py-2 px-0" href="{{ url_for('main.resume', _anchor='skills') }}">
+                <i class="ai-horizontal-align-left fs-5 opacity-60 me-2">
+                </i>
+                Skills
+              </a>
+              <a class="nav-link fw-semibold py-2 px-0" href="{{ url_for('main.resume', _anchor='work_experience') }}">
+                <i class="ai-briefcase fs-5 opacity-60 me-2">
+                </i>
+                Work Experience
+              </a>
+              <a class="nav-link fw-semibold py-2 px-0" href="{{ url_for('main.resume', _anchor='degrees') }}">
+                <i class="ai-award fs-5 opacity-60 me-2">
+                </i>
+                Degrees
+              </a>
+            </nav>
           </div>
         </div>
+      </div>
     </aside>
 
-      <!-- Page content-->
-      <div class="col-lg-9 pt-4 pb-2 pb-sm-4">
-        <h1 id="overview" class="h2 mb-4">Resume</h1>
-        {% include 'about/basic_info.html' %}
-        {% include 'about/skills.html' %}
-        {% include 'about/work_experience.html' %}
-        {% include 'about/degrees.html' %}
-      </div>
-
+    <!-- Page content-->
+    <div class="col-lg-9 pt-4 pb-2 pb-sm-4">
+      <h1 id="overview" class="h2 mb-4">Resume</h1>
+      {% include 'about/basic_info.html' %}
+      {% include 'about/skills.html' %}
+      {% include 'about/work_experience.html' %}
+      {% include 'about/degrees.html' %}
     </div>
+
   </div>
-  {% endblock %}
-
-
-
+</div>
+{% endblock %}

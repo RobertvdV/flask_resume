@@ -144,11 +144,10 @@
       
     </script>
     
-    <!-- Import Google Font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" id="google-font">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400&display=swap" rel="stylesheet"> -->
+    {# Google Fonts #}
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=VT323&display=swap');
+    </style>
 
     
     <!-- Vendor styles-->
@@ -221,9 +220,11 @@
     <!-- Footer-->
     <footer class="footer bg-faded-primary py-5">
       <div class="container pt-1 pt-sm-2 pt-md-3 pt-lg-4 pt-xl-5">
-        <div class="border-bottom text-center pb-4"><a class="navbar-brand d-inline-flex text-nav py-0 mb-3 mb-md-4" href="{{ url_for('main.index') }}">
-          <!-- <img src="{{ url_for('static', filename='favicon/robert_head_logo.svg') }}" width="35" alt="Robert"> -->
-            <span>Robert van de Vlasakker</span></a>
+        <div class="border-bottom text-center pb-4">
+        <a class="navbar-brand d-inline-flex text-nav py-0 mb-3 mb-md-4" href="{{ url_for('main.index') }}">
+          <img src="{{ url_for('static', filename='favicon/robert_head_logo.svg') }}" width="35" alt="Robert">
+            <span>Robert van de Vlasakker</span>
+        </a>
           <ul class="nav justify-content-center py-1 pb-sm-2">
             <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="{{ url_for('main.index') }}">Home</a></li>
             <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="{{ url_for('main.resume') }}">Resume</a></li>

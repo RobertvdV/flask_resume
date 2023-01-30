@@ -48,7 +48,7 @@
   --ar-black-rgb: 0, 0, 0;
   --ar-body-color-rgb: 87, 96, 113;
   --ar-body-bg-rgb: 255, 255, 255;
-  --ar-font-sans-serif: "Inter", sans-serif;
+  --ar-font-sans-serif: "Source Code Pro", monospace;
   --ar-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --ar-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --ar-root-font-size: 1rem;
@@ -12399,7 +12399,7 @@ a.badge {
   box-shadow: 0 0.1875rem 0.875rem rgba(18, 21, 25, 0.32); }
 
 .leaflet-container {
-  font-family: "Inter", sans-serif; }
+  font-family: "Source Code Pro", monospace; }
   .leaflet-container a.leaflet-popup-close-button {
     top: .5rem;
     right: .5rem;

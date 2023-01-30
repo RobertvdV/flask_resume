@@ -1,267 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {% block head %}
-    <meta charset="utf-8">
-    <title>RobertvdV</title>
-    
-    <!-- SEO Meta Tags-->
-    <meta name="description" content="Robert van de Vlasakker - Data Scientist">
-    <meta name="keywords" content="Resume, Data Science, Machine Learning, Deep Learning, Geo-Information Science">
-    <meta name="author" content="Robert van de Vlasakker">
-    
-    <!-- Viewport-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-    <!-- Favicon and Touch Icons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest') }}">
-    <link rel="mask-icon" color="#6366f1" href="{{ url_for('static', filename='favicon/safari-pinned-tab.svg') }}">
-    
-    <meta name="msapplication-TileColor" content="#080032">
-    <meta name="msapplication-config" content="{{ url_for('static', filename='favicon/browserconfig.xml') }}">
-    <meta name="theme-color" content="white">
- 
-    {# {% block styles %}
-        <!-- Bootstrap CSS -->
-       {{ bootstrap.load_css() }}
-    {% endblock %} #}
-    {% endblock %}
 
-    <!-- Theme mode-->
-    <script>
-      let mode = window.localStorage.getItem('mode'),
-          root = document.getElementsByTagName('html')[0];
-      if (mode !== undefined && mode === 'dark') {
-        root.classList.add('dark-mode');
-      } else {
-        root.classList.remove('dark-mode');
-      }
-    </script>
+<head>
+  {% block head %}
+  <meta charset="utf-8">
+  <title>RobertvdV</title>
 
-    <!-- Page loading styles-->
-    <style>
-      .page-loading {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        -webkit-transition: all .4s .2s ease-in-out;
-        transition: all .4s .2s ease-in-out;
-        background-color: #fff;
-        opacity: 0;
-        visibility: hidden;
-        z-index: 9999;
+  <!-- SEO Meta Tags-->
+  <meta name="description" content="Robert van de Vlasakker - Data Scientist">
+  <meta name="keywords" content="Resume, Data Science, Machine Learning, Deep Learning, Geo-Information Science">
+  <meta name="author" content="Robert van de Vlasakker">
+
+  <!-- Viewport-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon and Touch Icons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
+  <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest') }}">
+  <link rel="mask-icon" color="#6366f1" href="{{ url_for('static', filename='favicon/safari-pinned-tab.svg') }}">
+
+  <meta name="msapplication-TileColor" content="#080032">
+  <meta name="msapplication-config" content="{{ url_for('static', filename='favicon/browserconfig.xml') }}">
+  <meta name="theme-color" content="white">
+
+  {# {% block styles %}
+  <!-- Bootstrap CSS -->
+  {{ bootstrap.load_css() }}
+  {% endblock %} #}
+  {% endblock %}
+
+  <!-- Theme mode-->
+  <script>
+    let mode = window.localStorage.getItem('mode'),
+      root = document.getElementsByTagName('html')[0];
+    if (mode !== undefined && mode === 'dark') {
+      root.classList.add('dark-mode');
+    } else {
+      root.classList.remove('dark-mode');
+    }
+  </script>
+
+  <!-- Page loading styles-->
+  <style>
+    .page-loading {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all .4s .2s ease-in-out;
+      transition: all .4s .2s ease-in-out;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 9999;
+    }
+
+    .dark-mode .page-loading {
+      background-color: #121519;
+    }
+
+    .page-loading.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .page-loading-inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+      opacity: 0;
+    }
+
+    .page-loading.active>.page-loading-inner {
+      opacity: 1;
+    }
+
+    .page-loading-inner>span {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: normal;
+      color: #6f788b;
+    }
+
+    .dark-mode .page-loading-inner>span {
+      color: #fff;
+      opacity: .6;
+    }
+
+    .page-spinner {
+      display: inline-block;
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-bottom: .75rem;
+      vertical-align: text-bottom;
+      background-color: #d7dde2;
+      border-radius: 50%;
+      opacity: 0;
+      -webkit-animation: spinner .75s linear infinite;
+      animation: spinner .75s linear infinite;
+    }
+
+    .dark-mode .page-spinner {
+      background-color: rgba(255, 255, 255, .25);
+    }
+
+    @-webkit-keyframes spinner {
+      0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
       }
-      .dark-mode .page-loading {
-        background-color: #121519;
-      }
-      .page-loading.active {
+
+      50% {
         opacity: 1;
-        visibility: visible;
+        -webkit-transform: none;
+        transform: none;
       }
-      .page-loading-inner {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-        -webkit-transition: opacity .2s ease-in-out;
-        transition: opacity .2s ease-in-out;
-        opacity: 0;
-      }
-      .page-loading.active > .page-loading-inner {
-        opacity: 1;
-      }
-      .page-loading-inner > span {
-        display: block;
-        font-family: 'Inter', sans-serif;
-        font-size: 1rem;
-        font-weight: normal;
-        color: #6f788b;
-      }
-      .dark-mode .page-loading-inner > span {
-        color: #fff;
-        opacity: .6;
-      }
-      .page-spinner {
-        display: inline-block;
-        width: 2.75rem;
-        height: 2.75rem;
-        margin-bottom: .75rem;
-        vertical-align: text-bottom;
-        background-color: #d7dde2; 
-        border-radius: 50%;
-        opacity: 0;
-        -webkit-animation: spinner .75s linear infinite;
-        animation: spinner .75s linear infinite;
-      }
-      .dark-mode .page-spinner {
-        background-color: rgba(255,255,255,.25);
-      }
-      @-webkit-keyframes spinner {
-        0% {
-          -webkit-transform: scale(0);
-          transform: scale(0);
-        }
-        50% {
-          opacity: 1;
-          -webkit-transform: none;
-          transform: none;
-        }
-      }
-      @keyframes spinner {
-        0% {
-          -webkit-transform: scale(0);
-          transform: scale(0);
-        }
-        50% {
-          opacity: 1;
-          -webkit-transform: none;
-          transform: none;
-        }
-      }
-      
-    </style>
-    <!-- Page loading scripts-->
-    <script>
-      (function () {
-        window.onload = function () {
-          const preloader = document.querySelector('.page-loading');
-          preloader.classList.remove('active');
-          setTimeout(function () {
-            preloader.remove();
-          }, 1500);
-        };
-      })();
-      
-    </script>
-    
-    {# Google Fonts #}
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=VT323&display=swap');
-    </style>
+    }
 
-    
-    <!-- Vendor styles-->
-    <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}"/>
-    <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='vendor/leaflet/dist/leaflet.css') }}"/>
-    <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='vendor/aos/dist/aos.css') }}"/>
-        
-    <!-- Main Theme Styles + Bootstrap-->
-    {% assets "scss_all" %}
-    <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
-    {% endassets %}
-  </head>
-  
-  <!-- Body-->
-  <body>
-    
-    <!-- Page loading spinner-->
-    <div class="page-loading active">
-      <div class="page-loading-inner">
-        <div class="page-spinner"></div><span>Loading...</span>
-      </div>
+    @keyframes spinner {
+      0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      }
+
+      50% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+    }
+  </style>
+  <!-- Page loading scripts-->
+  <script>
+    (function () {
+      window.onload = function () {
+        const preloader = document.querySelector('.page-loading');
+        preloader.classList.remove('active');
+        setTimeout(function () {
+          preloader.remove();
+        }, 1500);
+      };
+    })();
+
+  </script>
+
+
+
+  <!-- Vendor styles-->
+  <link rel="stylesheet" media="screen"
+    href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" />
+  <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='vendor/leaflet/dist/leaflet.css') }}" />
+  <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='vendor/aos/dist/aos.css') }}" />
+
+  <!-- Main Theme Styles + Bootstrap-->
+  {% assets "scss_all" %}
+  <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+  {% endassets %}
+</head>
+
+<!-- Body-->
+
+<body>
+
+  <!-- Page loading spinner-->
+  <div class="page-loading active">
+    <div class="page-loading-inner">
+      <div class="page-spinner"></div><span>Loading...</span>
     </div>
-   
-    <!-- Page wrapper-->
-    <main class="page-wrapper">
+  </div>
 
-      <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page-->
-      <header class="navbar navbar-expand bg-faded-primary">
-        <div class="container">
-          <!-- <a href="{{ url_for('main.index') }}" class="navbar-brand">
-            <span class="text-primary flex-shrink-0 me-2">
-              <img src="{{ url_for('static', filename='favicon/robert_head_logo.svg') }}" width="35" alt="Robert">
-            </span>
-            Robert
-          </a> -->
-          <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
-            <input type="checkbox" class="form-check-input" id="theme-mode">
-            <label for="theme-mode" class="form-check-label">
-              <i class="ai-sun fs-lg"></i>
-            </label>
-            <label for="theme-mode" class="form-check-label">
-              <i class="ai-moon fs-lg"></i>
-            </label>
-          </div>
-          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse2">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          
-          <nav class="collapse navbar-collapse" id="navbarCollapse2">
-            <ul class="navbar-nav fs-sm">
-              <li class="nav-item">
-                <a href="{{ url_for('main.index') }}" class="nav-link">Home</a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ url_for('main.resume') }}" class="nav-link">Resume</a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ url_for('main.portfolio') }}" class="nav-link">Portfolio</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+  <!-- Page wrapper-->
+  <main class="page-wrapper">
 
-      <!-- Page content-->
-      {% block content %}{% endblock %}  
-            
-    </main>
-
-    <!-- Footer-->
-    <footer class="footer bg-faded-primary py-5">
-      <div class="container pt-1 pt-sm-2 pt-md-3 pt-lg-4 pt-xl-5">
-        <div class="border-bottom text-center pb-4">
-        <a class="navbar-brand d-inline-flex text-nav py-0 mb-3 mb-md-4" href="{{ url_for('main.index') }}">
-          <img src="{{ url_for('static', filename='favicon/robert_head_logo.svg') }}" width="35" alt="Robert">
-            <span>Robert van de Vlasakker</span>
+    <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page-->
+    <header class="navbar navbar-expand bg-faded-primary">
+      <div class="container">
+        <a href="{{ url_for('main.index') }}" class="navbar-brand">
+          <span class="text-primary flex-shrink-0 me-2">
+            <img src="{{ url_for('static', filename='favicon/robert_head_logo.svg') }}" width="35" alt="Robert">
+          </span>
+          Robert
         </a>
-          <ul class="nav justify-content-center py-1 pb-sm-2">
-            <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="{{ url_for('main.index') }}">Home</a></li>
-            <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="{{ url_for('main.resume') }}">Resume</a></li>
-            <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="{{ url_for('main.portfolio') }}">Portfolio</a></li>
-          </ul>
+        <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
+          <input type="checkbox" class="form-check-input" id="theme-mode">
+          <label for="theme-mode" class="form-check-label">
+            <i class="ai-sun fs-lg"></i>
+          </label>
+          <label for="theme-mode" class="form-check-label">
+            <i class="ai-moon fs-lg"></i>
+          </label>
         </div>
-        <div class="d-sm-flex align-items-center justify-content-between pt-4 mt-2 mt-sm-0">
-          <div class="d-flex justify-content-center order-sm-2 mb-4 mb-sm-0">
-            <a class="btn btn-icon btn-sm btn-secondary btn-github rounded-circle me-3" href=https://github.com/RobertvdV>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse2">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <nav class="collapse navbar-collapse" id="navbarCollapse2">
+          <ul class="navbar-nav fs-sm">
+            <li class="nav-item">
+              <a href="{{ url_for('main.index') }}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ url_for('main.resume') }}" class="nav-link">Resume</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ url_for('main.portfolio') }}" class="nav-link">Portfolio</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page content-->
+    {% block content %}{% endblock %}
+
+  </main>
+
+  <!-- Footer-->
+  <footer class="footer bg-faded-primary">
+    <div class="container py-4">
+      <div class="row align-items-center py-2 py-sm-3">
+        <div class="col-md-4 order-md-2 mb-4 mb-md-0">
+          <div class="d-flex justify-content-center justify-content-md-end"> <a
+              class="btn btn-icon btn-sm btn-secondary btn-github rounded-circle me-3"
+              href=https://github.com/RobertvdV>
               <i class="ai-github"></i>
             </a>
-            <a class="btn btn-icon btn-sm btn-secondary btn-linkedin rounded-circle me-3" href="https://www.linkedin.com/in/robertvandevlasakker/">
+            <a class="btn btn-icon btn-sm btn-secondary btn-linkedin rounded-circle me-3"
+              href="https://www.linkedin.com/in/robertvandevlasakker/">
               <i class="ai-linkedin"></i>
             </a>
           </div>
-          <p class="fs-sm order-sm-1 text-center mb-0">
-            <span class="opacity-70">&copy; <script>document.write(new Date().getFullYear())</script></span>
-          <a class="nav-link d-inline fw-normal p-0" href="https://www.linkedin.com/in/robertvandevlasakker/" target="_blank" rel="noopener">Robert van de Vlasakker</a></p>
+        </div>
+        <div class="col-md-8 order-md-1">
+          <div class="d-sm-flex text-nowrap justify-content-center justify-content-md-start">
+            <div class="nav flex-nowrap justify-content-center justify-content-sm-start order-sm-2 mb-3 mb-sm-0">
+              <a class="nav-link fw-normal py-0 px-3" href="{{ url_for('main.index') }}">Home</a>
+              <a class="nav-link fw-normal py-0 px-3" href="{{ url_for('main.resume') }}">Resume</a>
+              <a class="nav-link fw-normal py-0 px-3" href="{{ url_for('main.portfolio') }}">Portfolio</a>
+            </div>
+            <p class="text-muted order-sm-1 text-center pe-3 mb-0">
+              <span class="opacity-70">&copy; <script>document.write(new Date().getFullYear())</script></span>
+            <a class="nav-link d-inline fw-normal p-0" href="https://www.linkedin.com/in/robertvandevlasakker/" target="_blank" rel="noopener">Robert van de Vlasakker</a></p>
+          </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll>
-      <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
-      </svg><i class="ai-arrow-up"></i></a>
+  <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll>
+    <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10">
+      </circle>
+    </svg><i class="ai-arrow-up"></i></a>
 
-    <!-- Vendor scripts: js libraries and plugins-->
-    <script src="{{ url_for('static', filename='vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/jarallax/dist/jarallax.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/timezz/dist/timezz.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/leaflet/dist/leaflet.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/aos/dist/aos.js') }}"></script>
-    
-    <!-- Main theme script-->
-    <script src="{{ url_for('static', filename='js/theme.min.js') }}"></script>
-  </body>
+  <!-- Vendor scripts: js libraries and plugins-->
+  <script src="{{ url_for('static', filename='vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/jarallax/dist/jarallax.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/timezz/dist/timezz.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/leaflet/dist/leaflet.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/aos/dist/aos.js') }}"></script>
+
+  <!-- Main theme script-->
+  <script src="{{ url_for('static', filename='js/theme.min.js') }}"></script>
+</body>
+
 </html>

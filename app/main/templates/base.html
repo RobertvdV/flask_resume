@@ -26,7 +26,7 @@
  
     {# {% block styles %}
         <!-- Bootstrap CSS -->
-        {{ bootstrap.load_css() }}
+       {{ bootstrap.load_css() }}
     {% endblock %} #}
     {% endblock %}
 
@@ -148,6 +148,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" id="google-font">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400&display=swap" rel="stylesheet"> -->
+
     
     <!-- Vendor styles-->
     <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}"/>
@@ -155,7 +157,9 @@
     <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='vendor/aos/dist/aos.css') }}"/>
         
     <!-- Main Theme Styles + Bootstrap-->
-    <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='css/theme.min.css') }}">
+    {% assets "scss_all" %}
+    <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+    {% endassets %}
   </head>
   
   <!-- Body-->

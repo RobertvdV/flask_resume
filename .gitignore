@@ -145,3 +145,5 @@ logs/
 
 # Model for now
 # ./models/
+
+.vscode/

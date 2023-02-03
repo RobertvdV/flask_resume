@@ -185,7 +185,44 @@
   <main class="page-wrapper">
 
     <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page-->
-    <header class="navbar navbar-expand bg-faded-primary">
+    <header class="navbar navbar-expand-lg bg-light">
+      <div class="container">
+        <a href="{{ url_for('main.index') }}" class="navbar-brand">
+          <span class="text-primary flex-shrink-0 me-2">
+            <img src="{{ url_for('static', filename='favicon/robert_head_logo.svg') }}" width="35" alt="Robert">
+          </span>
+          RvdV
+        </a>
+        <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
+          <input type="checkbox" class="form-check-input" id="theme-mode">
+          <label for="theme-mode" class="form-check-label">
+            <i class="ai-sun fs-lg"></i>
+          </label>
+          <label for="theme-mode" class="form-check-label">
+            <i class="ai-moon fs-lg"></i>
+          </label>
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse2">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+  
+        <nav class="collapse navbar-collapse" id="navbarCollapse2">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="{{ url_for('main.index') }}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ url_for('main.resume') }}" class="nav-link">Resume</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ url_for('main.portfolio') }}" class="nav-link">Portfolio</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- <header class="navbar navbar-expand bg-faded-primary">
       <div class="container">
         <a href="{{ url_for('main.index') }}" class="navbar-brand">
           <span class="text-primary flex-shrink-0 me-2">
@@ -220,7 +257,7 @@
           </ul>
         </nav>
       </div>
-    </header>
+    </header> -->
 
     <!-- Page content-->
     {% block content %}{% endblock %}
@@ -266,7 +303,7 @@
     </svg><i class="ai-arrow-up"></i></a>
 
   <!-- Vendor scripts: js libraries and plugins-->
-  <script src="{{ url_for('static', filename='vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='src/node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
   <script src="{{ url_for('static', filename='vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js') }}"></script>
   <script src="{{ url_for('static', filename='vendor/jarallax/dist/jarallax.min.js') }}"></script>
   <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>

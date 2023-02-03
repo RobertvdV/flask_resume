@@ -1,28 +1,31 @@
 <section id="work_experience" class="col">
-    <div class="card h-100 bg-secondary border-0 py-1 p-md-2 mb-4 p-xl-3 p-xxl-4">
-      <div class="card-body">
-        <div class="d-flex align-items-center mt-sm-n1 pb-4 mb-1 mb-lg-2"><i class="ai-briefcase lead pe-1 me-2"></i>
-          <h2 class="h4 mb-0">Work Experience</h2><a class="btn btn-sm btn-secondary ms-auto" href="{{ url_for('main.download', filename="resume_Robert_vandeVlasakker.pdf") }}"><i class="ai-download ms-n1 me-2"></i>Download Resume</a>
+  <div class="card h-100 bg-secondary border-1 py-1 p-md-2 mb-4 p-xl-3 p-xxl-4">
+    <div class="card-body">
+      <div class="d-flex align-items-center mt-sm-n1 pb-4 mb-1 mb-lg-2"><i class="ai-briefcase lead pe-1 me-2"></i>
+        <h2 class="h4 mb-0">Work Experience</h2>
+        <!-- <a class="btn btn-sm btn-secondary ms-auto"
+          href="{{ url_for('main.download', filename=" resume_Robert_vandeVlasakker.pdf") }}"><i
+            class="ai-download ms-n1 me-2"></i>Download Resume</a> -->
+      </div>
+
+      <!-- Vertical steps (default) -->
+      <div class="steps fs-sm">
+
+        {% for event in workexperience %}
+        <!-- Active step -->
+        <div class="step active">
+          <div class="step-number">
+            <div class="step-number-inner">{{ loop.revindex }}</div>
+          </div>
+          <div class="step-body">
+            <h3 class="h6 mb-1 me-3">{{ event.position }}</h3>
+            <h4 class="h6 mb-1 me-3">{{ event.start_date }} - {{ event.end_date }}</h4>
+            <h4 class="h6 mb-1 me-3 text-muted">{{ event.organisation }}, {{ event.location }} {{ event.country }}</h4>
+            <p class="mb-0">{{ event.description }}</p>
+            <a href="{{ event.link }}">{{ event.link }}</a>
+          </div>
         </div>
-
-        <!-- Vertical steps (default) -->
-        <div class="steps fs-sm">
-
-            {% for event in workexperience %}
-            <!-- Active step -->
-            <div class="step active">
-            <div class="step-number">
-                <div class="step-number-inner">{{ loop.revindex }}</div>
-            </div>
-            <div class="step-body">
-                <h3 class="h6 mb-1 me-3">{{ event.position }}</h3>
-                <h4 class="h6 mb-1 me-3">{{ event.start_date }} - {{ event.end_date }}</h4>
-                <h4 class="h6 mb-1 me-3 text-muted">{{ event.organisation }}, {{ event.location }} {{ event.country }}</h4>
-                <p class="mb-0">{{ event.description }}</p>
-                <a href="{{ event.link }}">{{ event.link }}</a> 
-            </div>
-            </div>
-            {% endfor %} 
+        {% endfor %}
 
       </div>
     </div>

@@ -166,14 +166,12 @@
 
   <!-- Main Theme Styles + Bootstrap-->
   {% assets "scss_all" %}
-  <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+    <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
   {% endassets %}
 </head>
 
 <!-- Body-->
-
 <body>
-
   <!-- Page loading spinner-->
   <div class="page-loading active">
     <div class="page-loading-inner">
@@ -183,9 +181,8 @@
 
   <!-- Page wrapper-->
   <main class="page-wrapper">
-
-    <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page
-    <header class="navbar navbar-expand-lg bg-light">
+    <!-- Navbav -->
+    <header class="navbar navbar-expand-lg fixed-top bg-light">
       <div class="container">
         <a href="{{ url_for('main.index') }}" class="navbar-brand">
           <span class="text-primary flex-shrink-0 me-2">
@@ -194,21 +191,17 @@
           RvdV
         </a>
         <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
-          <input type="checkbox" class="form-check-input" id="theme-mode">
-          <label for="theme-mode" class="form-check-label">
-            <i class="ai-sun fs-lg"></i>
-          </label>
-          <label for="theme-mode" class="form-check-label">
-            <i class="ai-moon fs-lg"></i>
-          </label>
+          <input class="form-check-input" type="checkbox" id="theme-mode">
+          <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
+          <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
         </div>
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse2">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-  
-        <nav class="collapse navbar-collapse" id="navbarCollapse2">
-          <ul class="navbar-nav">
+        <a class="btn btn-primary btn-sm rounded-pill fs-sm order-lg-3 d-none d-sm-inline-flex" href="{{ url_for('main.download', filename="resume_Robert_vandeVlasakker.pdf") }}" target="_blank" rel="noopener">
+          <i class="ai-download ms-n1 me-2"></i>
+          Resume
+        </a>
+        <button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+        <nav class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">   
             <li class="nav-item">
               <a href="{{ url_for('main.index') }}" class="nav-link">Home</a>
             </li>
@@ -219,43 +212,16 @@
               <a href="{{ url_for('main.portfolio') }}" class="nav-link">Portfolio</a>
             </li>
           </ul>
+          <div class="d-sm-none p-3 mt-n3">
+            <a class="btn btn-primary w-100  mb-1" href="{{ url_for('main.download', filename="resume_Robert_vandeVlasakker.pdf") }}" target="_blank" rel="noopener">
+              <i class="ai-download ms-n1 me-2"></i>
+              Resume
+            </a>
+          </div>
         </nav>
       </div>
-    </header> -->
-
-
-    <header class="header navbar navbar-expand-lg fixed-top">
-      <div class="container">
-        <a href="{{ url_for('main.index') }}" class="navbar-brand">
-          <span class="text-primary flex-shrink-0 me-2">
-            <img src="{{ url_for('static', filename='favicon/robert_head_logo.svg') }}" width="35" alt="Robert">
-          </span>
-          RvdV
-        </a>
-        <button type="button" class="navbar-toggler me-2" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="offcanvas offcanvas-end" id="primaryMenu">
-          <div class="offcanvas-header">
-            <h5 class="mt-1 mb-0">Menu</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body pt-0">
-            <ul class="navbar-nav p-0">
-              <li class="nav-item">
-                <a href="{{ url_for('main.index') }}" class="nav-link">Home</a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ url_for('main.resume') }}" class="nav-link">Resume</a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ url_for('main.portfolio') }}" class="nav-link">Portfolio</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </header>
+
     <!-- Page content-->
     {% block content %}{% endblock %}
 

@@ -156,15 +156,15 @@
 
   </script>
 
-
-
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  
   <!-- Vendor styles-->
-  <link rel="stylesheet" media="screen"
-    href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" />
+  <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" />
   <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='vendor/leaflet/dist/leaflet.css') }}" />
   <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='vendor/aos/dist/aos.css') }}" />
 
-  <!-- Main Theme Styles + Bootstrap-->
+  <!-- Main Theme Styles -->
   {% assets "scss_all" %}
     <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
   {% endassets %}

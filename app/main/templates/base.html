@@ -24,11 +24,6 @@
   <meta name="msapplication-TileColor" content="#080032">
   <meta name="msapplication-config" content="{{ url_for('static', filename='favicon/browserconfig.xml') }}">
   <meta name="theme-color" content="white">
-
-  {% block styles %}
-    <!-- Bootstrap CSS -->
-    {{ bootstrap.load_css() }}
-  {% endblock %}
   {% endblock %}
 
   <!-- Theme mode-->
@@ -179,13 +174,12 @@
   <!-- Page wrapper-->
   <main class="page-wrapper">
     <!-- Navbav -->
-    <header class="navbar navbar-expand-lg fixed-top bg-light">
+    <header class="navbar navbar-expand bg-light">
       <div class="container">
         <a href="{{ url_for('main.index') }}" class="navbar-brand">
           <span class="text-primary flex-shrink-0 me-2">
             <img src="{{ url_for('static', filename='favicon/robert_head_logo.svg') }}" width="35" alt="Robert">
           </span>
-          RvdV
         </a>
         <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
           <input class="form-check-input" type="checkbox" id="theme-mode">
@@ -196,8 +190,6 @@
           <i class="ai-download ms-n1 me-2"></i>
           Resume
         </a>
-        <button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
-        <nav class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">   
             <li class="nav-item">
               <a href="{{ url_for('main.index') }}" class="nav-link">Home</a>
@@ -209,13 +201,6 @@
               <a href="{{ url_for('main.portfolio') }}" class="nav-link">Portfolio</a>
             </li>
           </ul>
-          <div class="d-sm-none p-3 mt-n3">
-            <a class="btn btn-primary w-100  mb-1" href="{{ url_for('main.download', filename="resume_Robert_vandeVlasakker.pdf") }}" target="_blank" rel="noopener">
-              <i class="ai-download ms-n1 me-2"></i>
-              Resume
-            </a>
-          </div>
-        </nav>
       </div>
     </header>
 

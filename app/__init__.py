@@ -3,14 +3,14 @@ import os
 
 from logging.handlers import SMTPHandler, RotatingFileHandler
 from flask import Flask
-from flask_bootstrap import Bootstrap5
+# from flask_bootstrap import Bootstrap5
 from config import Config
 from flask_assets import Environment, Bundle
 
 
 app = Flask(__name__)
 app.config.from_object(Config)
-bootstrap = Bootstrap5(app)
+# bootstrap = Bootstrap5(app)
 assets = Environment(app)
 
 # Blueprint Registration
